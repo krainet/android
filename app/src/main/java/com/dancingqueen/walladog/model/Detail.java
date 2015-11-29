@@ -7,6 +7,10 @@ public class Detail
     private double longitude;
     private double latitude;
 
+    protected Detail(){
+
+    }
+
     public String getFacebook_token () {
         return facebook_token;
     }
