@@ -1,13 +1,12 @@
 package com.dancingqueen.walladog.model;
 
-public class Detail
-{
+public class Detail {
     private String facebook_token;
     private String avatar_url;
     private double longitude;
     private double latitude;
 
-    protected Detail(){
+    public Detail(){
 
     }
 
@@ -45,6 +44,6 @@ public class Detail
 
     @Override
     public String toString() {
-        return "[facebook_token = "+facebook_token+", avatar_url = "+avatar_url+", longitude = "+longitude+", latitude = "+latitude+"]";
+        return "{facebook_token = "+facebook_token+", avatar_url = "+avatar_url+", longitude = "+longitude+", latitude = "+latitude+"}";
     }
 }
