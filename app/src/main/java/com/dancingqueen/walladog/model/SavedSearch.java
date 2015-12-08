@@ -1,68 +1,88 @@
 package com.dancingqueen.walladog.model;
 
+import org.json.*;
+
+
 public class SavedSearch {
 
-    private long id;
-    private String keywords;
-    private long raceId;
-    private long categoryId;
-    private long userId;
+    private double raceId;
+    private double userId;
     private double longitude;
+    private double id;
+    private String keywords;
+    private double categoryId;
     private double latitude;
 
-    public long getId () {
-        return id;
+
+    public SavedSearch () {
+
     }
 
-    public void setId (long id) {
-        this.id = id;
+    public SavedSearch (JSONObject json) {
+
+        this.raceId = json.optDouble("raceId");
+        this.userId = json.optDouble("userId");
+        this.longitude = json.optDouble("longitude");
+        this.id = json.optDouble("id");
+        this.keywords = json.optString("keywords");
+        this.categoryId = json.optDouble("categoryId");
+        this.latitude = json.optDouble("latitude");
+
     }
 
-    public String getKeywords ()  {
-        return keywords;
+    public double getRaceId() {
+        return this.raceId;
     }
 
-    public void setKeywords (String keywords) {
-        this.keywords = keywords;
-    }
-
-    public long getRaceId () {
-        return raceId;
-    }
-
-    public void setRaceId (long raceId) {
+    public void setRaceId(double raceId) {
         this.raceId = raceId;
     }
 
-    public long getCategoryId () {
-        return categoryId;
+    public double getUserId() {
+        return this.userId;
     }
 
-    public void setCategoryId (long categoryId) {
-        this.categoryId = categoryId;
-    }
-
-    public long getUserId () {
-        return userId;
-    }
-
-    public void setUserId (long userId) {
+    public void setUserId(double userId) {
         this.userId = userId;
     }
 
-    public double getLongitude () {
-        return longitude;
+    public double getLongitude() {
+        return this.longitude;
     }
 
-    public void setLongitude (double longitude) {
+    public void setLongitude(double longitude) {
         this.longitude = longitude;
     }
 
-    public double getLatitude ()  {
-        return latitude;
+    public double getId() {
+        return this.id;
     }
 
-    public void setLatitude (double latitude) {
+    public void setId(double id) {
+        this.id = id;
+    }
+
+    public String getKeywords() {
+        return this.keywords;
+    }
+
+    public void setKeywords(String keywords) {
+        this.keywords = keywords;
+    }
+
+    public double getCategoryId() {
+        return this.categoryId;
+    }
+
+    public void setCategoryId(double categoryId) {
+        this.categoryId = categoryId;
+    }
+
+    public double getLatitude() {
+        return this.latitude;
+    }
+
+    public void setLatitude(double latitude) {
         this.latitude = latitude;
     }
 

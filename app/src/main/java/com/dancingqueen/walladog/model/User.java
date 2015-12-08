@@ -1,78 +1,94 @@
 package com.dancingqueen.walladog.model;
 
+import org.json.*;
 
 
 public class User {
-    private long id;
+
     private Detail detail;
-    private String username;
-    private String email;
-    private String lastname;
-    private String firstname;
     private String password;
+    private double id;
+    private String lastname;
+    private String company;
+    private String firstname;
+    private String email;
 
-    public User(String jsonString) {
-        
+
+    public User () {
+
     }
 
-    public long getId () {
-        return id;
+    public User (JSONObject json) {
+
+        this.detail = new Detail(json.optJSONObject("detail"));
+        this.password = json.optString("password");
+        this.id = json.optDouble("id");
+        this.lastname = json.optString("lastname");
+        this.company = json.optString("company");
+        this.firstname = json.optString("firstname");
+        this.email = json.optString("email");
+
     }
 
-    public void setId (long id) {
-        this.id = id;
+    public Detail getDetail() {
+        return this.detail;
     }
 
-    public Detail getDetail () {
-        return detail;
-    }
-
-    public void setDetail (Detail detail) {
+    public void setDetail(Detail detail) {
         this.detail = detail;
     }
 
-    public String getUsername () {
-        return username;
+    public String getPassword() {
+        return this.password;
     }
 
-    public void setUsername (String username) {
-        this.username = username;
+    public void setPassword(String password) {
+        this.password = password;
     }
 
-    public String getEmail () {
-        return email;
+    public double getId() {
+        return this.id;
     }
 
-    public void setEmail (String email) {
-        this.email = email;
+    public void setId(double id) {
+        this.id = id;
     }
 
-    public String getLastname () {
-        return lastname;
+    public String getLastname() {
+        return this.lastname;
     }
 
-    public void setLastname (String lastname) {
+    public void setLastname(String lastname) {
         this.lastname = lastname;
     }
 
-    public String getFirstname () {
-        return firstname;
+    public String getCompany() {
+        return this.company;
     }
 
-    public void setFirstname (String firstname) {
+    public void setCompany(String company) {
+        this.company = company;
+    }
+
+    public String getFirstname() {
+        return this.firstname;
+    }
+
+    public void setFirstname(String firstname) {
         this.firstname = firstname;
     }
 
-    public String getPassword () {
-        return password;
+    public String getEmail() {
+        return this.email;
     }
 
-    public void setPassword (String password) {
-        this.password = password;
+    public void setEmail(String email) {
+        this.email = email;
     }
 
     @Override
     public String toString() {
-        return "{id = "+id+", detail = "+detail+", username = "+username+", email = "+email+", lastname = "+lastname+", firstname = "+firstname+", password = "+password+"}";
+        return "{id = "+id+", detail = "+detail+", email = "+email+", lastname = "+lastname+", firstname = "+firstname+", password = "+password+"}";
     }
+
 }

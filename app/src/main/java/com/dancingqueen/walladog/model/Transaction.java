@@ -1,54 +1,73 @@
 package com.dancingqueen.walladog.model;
 
+import org.json.*;
+
+
 public class Transaction {
-    private long product;
-    private long id;
-    private String date_transaction;
-    private long buyer;
-    private long seller;
 
-    public long getProduct () {
-        return product;
+    private double id;
+    private double sellerId;
+    private double productId;
+    private double buyerId;
+    private String transactionDate;
+
+
+    public Transaction () {
+
     }
 
-    public void setProduct (long product) {
-        this.product = product;
+    public Transaction (JSONObject json) {
+
+        this.id = json.optDouble("id");
+        this.sellerId = json.optDouble("sellerId");
+        this.productId = json.optDouble("productId");
+        this.buyerId = json.optDouble("buyerId");
+        this.transactionDate = json.optString("transaction_date");
+
     }
 
-    public long getId () {
-        return id;
+    public double getId() {
+        return this.id;
     }
 
-    public void setId (long id) {
+    public void setId(double id) {
         this.id = id;
     }
 
-    public String getDate_transaction () {
-        return date_transaction;
+    public double getSellerId() {
+        return this.sellerId;
     }
 
-    public void setDate_transaction (String date_transaction) {
-        this.date_transaction = date_transaction;
+    public void setSellerId(double sellerId) {
+        this.sellerId = sellerId;
     }
 
-    public long getBuyer () {
-        return buyer;
+    public double getProductId() {
+        return this.productId;
     }
 
-    public void setBuyer (long buyer) {
-        this.buyer = buyer;
+    public void setProductId(double productId) {
+        this.productId = productId;
     }
 
-    public long getSeller () {
-        return seller;
+    public double getBuyerId() {
+        return this.buyerId;
     }
 
-    public void setSeller (long seller) {
-        this.seller = seller;
+    public void setBuyerId(double buyerId) {
+        this.buyerId = buyerId;
+    }
+
+    public String getTransactionDate() {
+        return this.transactionDate;
+    }
+
+    public void setTransactionDate(String transactionDate) {
+        this.transactionDate = transactionDate;
     }
 
     @Override
     public String toString() {
-        return "{id = "+id+", product = "+product+", date_transaction = "+date_transaction+", buyer = "+buyer+", seller = "+seller+"}";
+        return "{id = "+id+", productId = "+productId+", transactionDate = "+transactionDate+", buyerId = "+buyerId+", sellerId = "+sellerId+"}";
     }
 }
