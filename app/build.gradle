@@ -42,11 +42,13 @@ dependencies {
     testCompile 'junit:junit:4.12'
     compile 'com.android.support:appcompat-v7:23.1.1'
     compile 'com.android.support:support-v13:23.1.1'
+    compile 'com.android.support:design:23.1.1'
     compile 'com.google.android.gms:play-services-gcm:8.3.0'
     compile 'com.amazonaws:aws-android-sdk-core:2.2.8'
     compile 'com.amazonaws:aws-android-sdk-s3:2.2.8'
     compile 'com.amazonaws:aws-android-sdk-cognito:2.2.8'
     compile 'com.amazonaws:aws-android-sdk-mobileanalytics:2.2.8'
     compile 'com.amazonaws:aws-android-sdk-sns:2.2.8'
+    compile 'com.mikhaellopez:circularimageview:2.1.0'
 }
 
