@@ -1,41 +1,57 @@
 package com.dancingqueen.walladog.model;
 
+import org.json.*;
 
 public class Image {
-    private long id;
-    private String name;
-    private String photoUrl;
-    private long productId;
 
-    public long getId () {
-        return id;
+    private double id;
+    private String photoUrl;
+    private String name;
+    private double productId;
+
+
+    public Image () {
+
     }
 
-    public void setId (long id) {
+    public Image (JSONObject json) {
+
+        this.id = json.optDouble("id");
+        this.photoUrl = json.optString("photoUrl");
+        this.name = json.optString("name");
+        this.productId = json.optDouble("productId");
+
+    }
+
+    public double getId() {
+        return this.id;
+    }
+
+    public void setId(double id) {
         this.id = id;
     }
 
-    public String getName () {
-        return name;
+    public String getPhotoUrl() {
+        return this.photoUrl;
     }
 
-    public void setName (String name) {
-        this.name = name;
-    }
-
-    public String getPhotoUrl () {
-        return photoUrl;
-    }
-
-    public void setPhotoUrl (String photoUrl) {
+    public void setPhotoUrl(String photoUrl) {
         this.photoUrl = photoUrl;
     }
 
-    public long getProductId () {
-        return productId;
+    public String getName() {
+        return this.name;
     }
 
-    public void setProductId (long productId) {
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public double getProductId() {
+        return this.productId;
+    }
+
+    public void setProductId(double productId) {
         this.productId = productId;
     }
 
