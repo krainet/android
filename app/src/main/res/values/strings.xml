@@ -2,4 +2,7 @@
     <string name="app_name">Walladog</string>
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="walladog_started">Walladog is UP!</string>
+    <string name="walladog_low_memory">Walladog has low memory, ouch!</string>
+    <string name="title_activity_add_product">Agregar Dog</string>
 </resources>
