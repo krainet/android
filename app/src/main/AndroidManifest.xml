@@ -10,7 +10,7 @@
         android:label="@string/app_name"
         android:theme="@style/AppTheme" >
         <activity
-            android:name="com.walladog.walladog.controller.activities.MainActivity"
+            android:name=".controller.activities.MainActivity"
             android:label="@string/app_name"
             android:theme="@style/AppTheme.NoActionBar" >
             <intent-filter>
@@ -20,8 +20,13 @@
             </intent-filter>
         </activity>
         <activity
-            android:name="com.walladog.walladog.controller.activities.AddProductActivity"
+            android:name=".controller.activities.AddProductActivity"
             android:label="@string/title_activity_add_product"
+            android:theme="@style/AppTheme.NoActionBar" >
+        </activity>
+        <activity
+            android:name=".WalladogApp"
+            android:label="@string/app_name"
             android:theme="@style/AppTheme.NoActionBar" >
         </activity>
     </application>

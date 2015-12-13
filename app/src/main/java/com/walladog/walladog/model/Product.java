@@ -2,8 +2,10 @@ package com.walladog.walladog.model;
 
 import org.json.*;
 
+import java.io.Serializable;
 
-public class Product {
+
+public class Product implements Serializable {
 
     private String gender;
     private double stateId;

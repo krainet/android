@@ -1,30 +1,40 @@
 package com.walladog.walladog.controller.fragments;
 
 import android.app.Activity;
+
+import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
 import android.app.Fragment;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
+import android.widget.TextView;
 
+import com.squareup.picasso.Picasso;
 import com.walladog.walladog.R;
+import com.walladog.walladog.controller.activities.AddProductActivity;
+import com.walladog.walladog.model.Services;
 
 
 public class ServiceFragment extends Fragment {
-    private static final String ARG_PARAM1 = "param1";
-    private static final String ARG_PARAM2 = "param2";
 
-    private String mParam1;
-    private String mParam2;
+    private static final String TAG = MainFragment.class.getName();
+
+    public static final String ARG_WDSERVICE = null;
+    private Services wdservice;
+
+    private static TextView serviceTitle = null;
+    private static ImageView serviceImage = null;
 
     private OnFragmentInteractionListener mListener;
 
-    public static ServiceFragment newInstance(String param1, String param2) {
+    public static ServiceFragment newInstance(Services service) {
         ServiceFragment fragment = new ServiceFragment();
         Bundle args = new Bundle();
-        args.putString(ARG_PARAM1, param1);
-        args.putString(ARG_PARAM2, param2);
+        args.putSerializable(ARG_WDSERVICE, service);
         fragment.setArguments(args);
         return fragment;
     }
@@ -37,8 +47,7 @@ public class ServiceFragment extends Fragment {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         if (getArguments() != null) {
-            mParam1 = getArguments().getString(ARG_PARAM1);
-            mParam2 = getArguments().getString(ARG_PARAM2);
+            wdservice = (Services) getArguments().getSerializable(ARG_WDSERVICE);
         }
     }
 
@@ -47,6 +56,26 @@ public class ServiceFragment extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         final View root = inflater.inflate(R.layout.fragment_service, container, false);
+
+        // Linking with view
+        serviceTitle = (TextView) root.findViewById(R.id.txt_service_title);
+        serviceImage = (ImageView) root.findViewById(R.id.img_service2);
+
+        // Sync view & model
+        serviceTitle.setText(wdservice.getName());
+        Picasso.with(getActivity().getApplicationContext())
+                .load(wdservice.getServiceImage())
+                .placeholder(R.drawable.walladogt)
+                .into(serviceImage);
+
+        serviceImage.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Log.v(TAG, "Click");
+                Intent i = new Intent(getActivity().getApplicationContext(), AddProductActivity.class);
+                startActivity(i);
+            }
+        });
 
         return root;
     }

@@ -5,14 +5,14 @@
         <item
             android:id="@+id/nav_listItem"
             android:icon="@mipmap/image_camera_icon"
-            android:title="List Item" />
+            android:title="Walla Adopta" />
     </group>
 
     <group android:id="@+id/grp2">
         <item
             android:id="@+id/nav_messages"
             android:icon="@mipmap/image_messages_icon"
-            android:title="Messages" />
+            android:title="Walla Amigos" />
 
     </group>
 
@@ -20,7 +20,7 @@
         <item
             android:id="@+id/nav_help"
             android:icon="@mipmap/image_help_icon"
-            android:title="Help" />
+            android:title="Walla Ayuda" />
     </group>
 
 </menu>

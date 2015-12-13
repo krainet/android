@@ -16,7 +16,7 @@
         android:layout_width="75dp"
         android:layout_height="75dp"
         android:layout_marginTop="50dp"
-        android:src="@mipmap/image_user_default"
+        android:src="@drawable/walladogt"
         android:scaleType="centerInside"
         app:border="true"
         app:border_color="@android:color/white"
@@ -32,14 +32,14 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Sign up"
+            android:text="Registrarse"
             android:textAppearance="@style/TextAppearance.AppCompat.Body1"
             android:textColor="@android:color/white"/>
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="or sign in"
+            android:text="Entrar en Walladog"
             android:id="@+id/textView"
             android:textColor="@android:color/white"/>
 

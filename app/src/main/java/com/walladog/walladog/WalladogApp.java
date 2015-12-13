@@ -2,10 +2,8 @@ package com.walladog.walladog;
 
 import android.app.Application;
 import android.content.Context;
+import android.os.Bundle;
 import android.util.Log;
-
-
-
 
 import java.lang.ref.WeakReference;
 
@@ -21,7 +19,6 @@ public class WalladogApp extends Application {
     @Override
     public void onCreate() {
         super.onCreate();
-
         final Context c = getApplicationContext();
         context = new WeakReference<Context>(c);
 
@@ -36,4 +33,8 @@ public class WalladogApp extends Application {
     }
 
 
+    // Tenemos contexto desde donde queramos ;D
+    public static WeakReference<Context> getContext() {
+        return context;
+    }
 }

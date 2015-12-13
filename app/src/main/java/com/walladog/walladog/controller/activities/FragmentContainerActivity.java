@@ -6,6 +6,7 @@ import android.support.v4.app.FragmentManager;
 import android.support.v7.app.AppCompatActivity;
 
 import com.walladog.walladog.R;
+import com.walladog.walladog.WalladogApp;
 
 /**
  * Created by hadock on 12/12/15.
