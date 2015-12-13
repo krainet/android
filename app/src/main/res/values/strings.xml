@@ -5,4 +5,7 @@
     <string name="walladog_started">Walladog is UP!</string>
     <string name="walladog_low_memory">Walladog has low memory, ouch!</string>
     <string name="title_activity_add_product">Agregar Dog</string>
+
+<!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>
