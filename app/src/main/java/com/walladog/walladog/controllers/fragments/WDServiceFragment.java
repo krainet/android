@@ -2,6 +2,7 @@ package com.walladog.walladog.controllers.fragments;
 
 import android.app.Activity;
 import android.app.Fragment;
+import android.app.FragmentManager;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
@@ -15,6 +16,7 @@ import android.widget.TextView;
 import com.mikhaellopez.circularimageview.CircularImageView;
 import com.squareup.picasso.Picasso;
 import com.walladog.walladog.R;
+import com.walladog.walladog.controllers.adapters.ProductListAdapter;
 import com.walladog.walladog.model.WDServices;
 
 /**
@@ -73,9 +75,14 @@ public class WDServiceFragment extends Fragment  {
         serviceImage.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Log.v(TAG, "Click");
+                Log.v(TAG, "Click on Services");
 /*                Intent i = new Intent(getActivity().getApplicationContext(), AddProductActivity.class);
                 startActivity(i);*/
+                getParentFragment().getFragmentManager().beginTransaction()
+                        .addToBackStack(WDServiceFragment.class.getName())
+                        .replace(R.id.container, ProductListFragment.newInstance())
+                        .commit();
+
             }
         });
         return root;

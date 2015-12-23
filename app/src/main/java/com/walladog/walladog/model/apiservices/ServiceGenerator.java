@@ -1,6 +1,10 @@
 package com.walladog.walladog.model.apiservices;
 
+import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
 import com.squareup.okhttp.OkHttpClient;
+import com.walladog.walladog.model.Detail;
+
 
 import retrofit.GsonConverterFactory;
 import retrofit.Retrofit;
@@ -14,11 +18,15 @@ public class ServiceGenerator {
 
     public static final String API_BASE_URL = "http://api.develjitsu.com";
 
+    public static Gson gson = new GsonBuilder()
+            .registerTypeAdapter(Detail.class, new GenericDeserializer<>(Detail.class))
+            .create();
+
     private static OkHttpClient httpClient = new OkHttpClient();
     private static Retrofit.Builder builder =
             new Retrofit.Builder()
                     .baseUrl(API_BASE_URL)
-                    .addConverterFactory(GsonConverterFactory.create());
+                    .addConverterFactory(GsonConverterFactory.create(gson));
 
     public static <S> S createService(Class<S> serviceClass) {
         Retrofit retrofit = builder.client(httpClient).build();

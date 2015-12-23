@@ -26,14 +26,10 @@ public class WDGcmIntentService extends IntentService {
     private NotificationManager mNotificationManager;
     private final static String TAG = "WDGcmIntentService";
 
-    /**
-     * Creates an IntentService.  Invoked by your subclass's constructor.
-     *
-     * @param name Used to name the worker thread, important only for debugging.
-     */
-    public WDGcmIntentService(String name) {
-        super(name);
+    public WDGcmIntentService() {
+        super("WDGcmIntentService");
     }
+
 
     @Override
     protected void onHandleIntent(Intent intent) {
@@ -70,7 +66,7 @@ public class WDGcmIntentService extends IntentService {
 
         NotificationCompat.Builder mBuilder = (NotificationCompat.Builder) new NotificationCompat.Builder(this)
                 .setSmallIcon(R.drawable.walladogt)
-                .setContentTitle("Ocutag Snap")
+                .setContentTitle("Walladog!")
                 .setStyle(new NotificationCompat.BigTextStyle().bigText(msg))
                 .setContentText(msg)
                 .setDefaults(Notification.DEFAULT_SOUND | Notification.DEFAULT_VIBRATE);

@@ -25,6 +25,7 @@ public class WDServices implements DAOPersistable<WDServices>,Serializable {
     @SerializedName("serviceImage")
     private String serviceImage;
 
+
     public Boolean getSuccess() {
         return success;
     }

@@ -1,21 +1,29 @@
 package com.walladog.walladog.model;
 
+import com.google.gson.annotations.SerializedName;
+
 import org.json.JSONObject;
 
 
 public class User {
 
+    @SerializedName("detail")
     private Detail detail;
+    @SerializedName("password")
     private String password;
+    @SerializedName("id")
     private double id;
+    @SerializedName("lastname")
     private String lastname;
+    @SerializedName("company")
     private String company;
+    @SerializedName("firstname")
     private String firstname;
+    @SerializedName("email")
     private String email;
 
 
     public User () {
-
     }
 
     public User (JSONObject json) {

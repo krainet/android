@@ -3,19 +3,15 @@
           xmlns:android="http://schemas.android.com/apk/res/android">
 
     <uses-permission android:name="android.permission.INTERNET" />
+
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     <uses-permission android:name="android.permission.WAKE_LOCK" />
     <uses-permission android:name="android.permission.VIBRATE" />
+
     <uses-permission android:name=".permission.RECEIVE" />
     <uses-permission android:name="com.walladog.permission.C2D_MESSAGE" />
     <permission android:name="com.walladog.permission.C2D_MESSAGE"
                 android:protectionLevel="signature" />
-
-<!--
-    <uses-permission android:name="com.walladog.walladog.permission.C2D_MESSAGE" />
-    <permission android:name="com.walladog.walladog.permission.C2D_MESSAGE"
-                android:protectionLevel="signature" />
--->
 
 
     <application
@@ -39,10 +35,17 @@
         </receiver>
 
 
+        <service android:name=".notifications.WDGcmIntentService"></service>
+
+        <!--<application
+            <service android:name=".notifications.WDGcmIntentService" />
+        <application/>
+-->
 
         <activity
             android:name=".controllers.activities.SplashActivity"
             android:label="@string/app_name"
+            android:noHistory="true"
             android:theme="@style/AppTheme.NoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
@@ -54,7 +57,11 @@
             android:label="@string/app_name"
             android:theme="@style/AppTheme.NoActionBar">
         </activity>
-
+        <activity
+            android:name=".controllers.activities.LoginActivity"
+            android:label="@string/app_name"
+            android:theme="@style/AppTheme.NoActionBar">
+        </activity>
     </application>
 
 </manifest>
