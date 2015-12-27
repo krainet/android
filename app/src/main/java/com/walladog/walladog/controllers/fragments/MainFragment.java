@@ -115,10 +115,14 @@ public class MainFragment extends Fragment implements NavigationView.OnNavigatio
                     .replace(R.id.main_linear, MainFragment.newInstance())
                     .commit();
         } else if (id == R.id.nav_login) {
-            getFragmentManager().beginTransaction()
+            Log.v(TAG, "entramos en login");
+            Intent i = new Intent(getActivity(),LoginActivity.class);
+            startActivity(i);
+
+            /*getFragmentManager().beginTransaction()
                     .addToBackStack(LoginFragment.class.getName())
                     .replace(R.id.main_linear, LoginFragment.newInstance())
-                    .commit();
+                    .commit();*/
         } else {
             Log.v(TAG, "Class selected");
             Log.v(TAG, String.valueOf(id));
